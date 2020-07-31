@@ -339,6 +339,8 @@
       (define-key vterm-mode-map (kbd "M-p") 'vterm-send-up)
       (define-key vterm-mode-map (kbd "M-y") 'vterm-yank-pop)
       (define-key vterm-mode-map (kbd "M-/") 'vterm-send-tab)
+      (define-key vterm-mode-map (kbd "C-g") 'vterm-send-C-g)
+      (define-key vterm-mode-map (kbd "C-u") 'vterm-send-C-u)
 
       (evil-define-key 'insert vterm-mode-map (kbd "C-y") 'vterm-yank)
 

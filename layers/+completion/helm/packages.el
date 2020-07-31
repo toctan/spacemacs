@@ -93,7 +93,7 @@
       (spacemacs||set-helm-key "ff"   spacemacs/helm-find-files)
       (spacemacs||set-helm-key "fF"   helm-find-files)
       (spacemacs||set-helm-key "fL"   helm-locate)
-      (spacemacs||set-helm-key "fr"   helm-recentf)
+      ;; (spacemacs||set-helm-key "fr"   helm-recentf)
       (spacemacs||set-helm-key "hda"  helm-apropos)
       (spacemacs||set-helm-key "hdF"  spacemacs/helm-faces)
       (spacemacs||set-helm-key "hi"   helm-info-at-point)
@@ -462,4 +462,5 @@
      spacemacs--persp-display-perspectives-func 'spacemacs/helm-perspectives)))
 
 (defun helm/post-init-projectile ()
-  (setq projectile-completion-system 'helm))
+  ;; (setq projectile-completion-system 'helm)
+  )

@@ -244,8 +244,8 @@ See https://github.com/syl20bnr/spacemacs/issues/3700"
   ;; use M-RET in terminal
   (define-key ido-completion-map "\M-\r" 'ido-select-text)
   (define-key ido-completion-map (kbd "C-h") 'ido-delete-backward-updir)
-  (define-key ido-completion-map (kbd "C-j") 'ido-next-match)
-  (define-key ido-completion-map (kbd "C-k") 'ido-prev-match)
+  ;; (define-key ido-completion-map (kbd "C-j") 'ido-next-match)
+  ;; (define-key ido-completion-map (kbd "C-k") 'ido-prev-match)
   (define-key ido-completion-map (kbd "C-l") 'ido-exit-minibuffer)
   (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
   (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)
@@ -257,7 +257,7 @@ See https://github.com/syl20bnr/spacemacs/issues/3700"
   (define-key ido-completion-map (kbd "C-S-p") 'previous-history-element)
   ;; ido-other window maps
   (define-key ido-completion-map (kbd "C-o") 'spacemacs/ido-invoke-in-other-window)
-  (define-key ido-completion-map (kbd "C-s") 'spacemacs/ido-invoke-in-vertical-split)
+  ;; (define-key ido-completion-map (kbd "C-s") 'spacemacs/ido-invoke-in-vertical-split)
   (define-key ido-completion-map (kbd "C-t") 'spacemacs/ido-invoke-in-new-frame)
   (define-key ido-completion-map (kbd "C-v") 'spacemacs/ido-invoke-in-horizontal-split)
   ;; initiate transient-state

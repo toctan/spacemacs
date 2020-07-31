@@ -51,7 +51,8 @@
     :init
     (progn
       (add-to-list 'auto-mode-alist '("\\.plist\\'" . nxml-mode))
-      (spacemacs/set-leader-keys "al" 'launchctl))
+      ;; (spacemacs/set-leader-keys "al" 'launchctl)
+      )
     :config
     (progn
       (evilified-state-evilify launchctl-mode launchctl-mode-map

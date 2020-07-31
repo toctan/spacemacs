@@ -390,7 +390,7 @@ MODE parameter must match the :modes values used in the call to
 (defvar spacemacs--yasnippet-expanding nil
   "Whether the snippet expansion is in progress.")
 
-(defun spacemacs//smartparens-disable-before-expand-snippet ()
+(defun spacemacs//smartparens-disable-before-expand-snippet (&rest _)
   "Handler for `yas-before-expand-snippet-hook'.
 Disable smartparens and remember its initial state."
   ;; Remember the initial smartparens state only once, when expanding a top-level snippet.
@@ -399,7 +399,7 @@ Disable smartparens and remember its initial state."
           spacemacs--smartparens-enabled-initially smartparens-mode))
   (smartparens-mode -1))
 
-(defun spacemacs//smartparens-restore-after-exit-snippet ()
+(defun spacemacs//smartparens-restore-after-exit-snippet (&rest _)
   "Handler for `yas-after-exit-snippet-hook'.
  Restore the initial state of smartparens."
   (setq spacemacs--yasnippet-expanding nil)

@@ -262,7 +262,10 @@
           try-complete-lisp-symbol))
   (when (configuration-layer/package-used-p 'yasnippet)
     ;; Try to expand yasnippet snippets based on prefix
-    (add-to-list 'hippie-expand-try-functions-list 'yas-hippie-try-expand)))
+    (add-to-list 'hippie-expand-try-functions-list 'yas-hippie-try-expand)
+    (with-eval-after-load 'hippie-exp
+      (advice-add 'hippie-expand :after
+                  #'spacemacs//smartparens-restore-after-exit-snippet))))
 
 (defun auto-completion/init-ivy-yasnippet ()
   (use-package ivy-yasnippet

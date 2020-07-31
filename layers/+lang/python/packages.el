@@ -167,6 +167,14 @@
     :defer t
     :commands live-py-mode
     :init
+    (advice-add 'live-py-update-all
+                :around (lambda (orig-fun &rest args)
+                          (let ((buffer-file-name (shell-quote-argument buffer-file-name)))
+                            (apply orig-fun args))))
+    (defadvice live-py-mode (before livepy/create-temp-file activate)
+      (unless (buffer-file-name)
+        ;; (rename-buffer (format "%s.py" (buffer-name)))
+        (write-file (temporary-file-directory))))
     (spacemacs/set-leader-keys-for-major-mode 'python-mode
       "l" 'live-py-mode)))
 

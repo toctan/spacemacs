@@ -242,8 +242,20 @@
     :defer t
     :init
     (progn
-      (unless (boundp 'ycmd-global-config)
-        (setq-default ycmd-global-config
-                      (concat (configuration-layer/get-layer-path 'ycmd)
-                              "global_conf.py")))
-      (setq-default ycmd-parse-conditions '(save mode-enabled)))))
+      (add-to-list 'projectile-globally-ignored-directories ".cquery_cached_index")
+      (add-to-list 'projectile-globally-ignored-directories ".ccls-cache")
+      (when c-c++-lsp-cache-dir
+        (add-to-list 'projectile-globally-ignored-directories c-c++-lsp-cache-dir))
+      (when c-c++-adopt-subprojects
+        (setq projectile-project-root-files-top-down-recurring
+          (append '("compile_commands.json"
+                    ".cquery"
+                    ".ccls")
+            projectile-project-root-files-top-down-recurring))))))
+
+;; (defun c-c++/post-init-smartparens ()
+;;   (add-hook 'c-mode-common-hook
+;;             '(lambda()
+;;                (setq-local sp-escape-quotes-after-insert nil))))
+
+;; END LSP BACKEND PACKAGES
